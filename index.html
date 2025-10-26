@@ -3,24 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpoonSite</title>
+  <title>SpoonMail Interface</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; text-align: center; }
-    header { background: #0078d7; color: white; padding: 20px 0; font-size: 2rem; }
-    main { padding: 50px 20px; }
-    a.button {
-      background: #0078d7; color: white; padding: 12px 24px; text-decoration: none;
-      border-radius: 8px; display: inline-block; margin-top: 20px;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f6f8fc;
+      color: #202124;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    a.button:hover { background: #005fa3; }
+    header {
+      background-color: #d93025;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header span { font-weight: bold; }
+    .container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar button {
+      background-color: #d93025;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-bottom: 20px;
+      transition: background-color 0.2s;
+    }
+    .sidebar button:hover {
+      background-color: #b1271c;
+    }
+    .sidebar a {
+      color: #202124;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .sidebar a:hover {
+      background-color: #f1f3f4;
+    }
+    .inbox {
+      flex: 1;
+      background-color: #fff;
+      border-left: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+    .inbox-header {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      font-weight: 600;
+    }
+    .email {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .email:hover {
+      background-color: #f9f9f9;
+    }
+    .email .sender {
+      font-weight: 600;
+      color: #202124;
+    }
+    .email .subject {
+      color: #5f6368;
+      flex: 1;
+      margin-left: 10px;
+    }
+    .email .time {
+      color: #5f6368;
+      font-size: 13px;
+    }
+    footer {
+      background-color: #f1f3f4;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #5f6368;
+    }
   </style>
 </head>
 <body>
-  <header>Welcome to SpoonSite!</header>
-  <main>
-    <p>Hey there 👋 — this is my free website hosted on GitHub Pages.</p>
-    <p>If you want to reach me, click below:</p>
-    <a class="button" href="mailto:youremail@gmail.com">Contact Me</a>
-  </main>
+  <header>
+    <span>SpoonMail</span>
+    <button onclick="window.location.href='mailto:youremail@gmail.com'">Compose</button>
+  </header>
+
+  <div class="container">
+    <div class="sidebar">
+      <button onclick="window.location.href='mailto:youremail@gmail.com'">+ Compose</button>
+      <a href="#">📥 Inbox</a>
+      <a href="#">⭐ Starred</a>
+      <a href="#">📤 Sent</a>
+      <a href="#">🗑 Trash</a>
+      <a href="#">⚙️ Settings</a>
+    </div>
+
+    <div class="inbox">
+      <div class="inbox-header">Inbox</div>
+
+      <!-- Sample mock emails -->
+      <div class="email">
+        <div class="sender">GitHub</div>
+        <div class="subject">Your SpoonSite has been published successfully!</div>
+        <div class="time">12:45 PM</div>
+      </div>
+      <div class="email">
+        <div class="sender">Google</div>
+        <div class="subject">Security alert: new sign-in detected.</div>
+        <div class="time">11:03 AM</div>
+      </div>
+      <div class="email">
+        <div class="sender">SpoonMail</div>
+        <div class="subject">Welcome to your new custom email interface 🎉</div>
+        <div class="time">9:24 AM</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 SpoonMail — Built and hosted free on GitHub Pages
+  </footer>
 </body>
 </html>
